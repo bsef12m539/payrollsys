@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using payrol.Models;
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/notify/0.3.3/notify-combined.min.js"></script>
+<section class="content">
+    <div class="container-fluid">        
+        <div class="card">
+            
+            <div class="body">
+                <h2 class="card-inside-title">Employee Attendance</h2>
+                <form method="post" action="/Employe/attendanceEmp">
+                    <div class="demo-radio-button">
+                        @{
+                            payEntities db = new payEntities();
+                            foreach (Emp e in db.Emps)
+                            {
+                                <input name=@e.Id type="radio" id="radio_1" value="P" checked />
+                                <label for="radio_1">Present</label>
+                                <input name=@e.Id type="radio" id="radio_2" value="A" />
+                                <label for="radio_2">Absent</label>
+                                <input name=@e.Id type="radio" class="with-gap" id="radio_3" value="L" />
+                                <label for="radio_3">Leave</label>
+                            
+                                @e.name
+    <br />
+    <br />
+                                @*<input name=@e.Id type="radio" id="radio_4" class="with-gap" />*@
+
+                            }
+
+                        }
+
+                    </div>
+                    <input type="submit" value="submit" />
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>

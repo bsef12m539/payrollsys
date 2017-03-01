@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/notify/0.3.3/notify-combined.min.js"></script>
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>FORM FOR ADD Employee</h2>
+        </div>
+        @if (Session["msg"] != null)
+        {
+            <script> $.notify("Employee ADD Successfully", "success") </script>
+            Session["msg"] = null;
+        }
+        <!-- Vertical Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            ADD Employee
+                        </h2>
+
+                    </div>
+                    <div class="body">
+                        <form method="post" action="/Employe/addempDb">
+                            <label for="email_address">Employee Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+                                </div>
+                            </div>
+                            <label for="email_address">Designation</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="dg" class="form-control" placeholder="Enter Designation" required>
+                                </div>
+                            </div>
+                            <label for="password">Department</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="dp" class="form-control" placeholder="Enter Department" required>
+                                </div>
+                            </div>
+                            <label for="email_address">Basic Salary</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="number" name="bs" class="form-control" placeholder="Enter Salary" required>
+                                </div>
+                            </div>
+                           
+
+                            <br>
+                            <input type="submit" value="Add" class="btn btn-primary m-t-15 waves-effect">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Vertical Layout -->
+        <!-- Vertical Layout | With Floating Label -->
+
+    </div>
+</section>

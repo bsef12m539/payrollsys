@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="payModelStoreContainer" CdmEntityContainer="payEntities">
+    <EntitySetMapping Name="Emps">
+      <EntityTypeMapping TypeName="payModel.Emp">
+        <MappingFragment StoreEntitySet="Emp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attendances">
+      <EntityTypeMapping TypeName="payModel.Attendance">
+        <MappingFragment StoreEntitySet="Attendance">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salaries">
+      <EntityTypeMapping TypeName="payModel.salary">
+        <MappingFragment StoreEntitySet="salary">
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="deduction" ColumnName="deduction" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

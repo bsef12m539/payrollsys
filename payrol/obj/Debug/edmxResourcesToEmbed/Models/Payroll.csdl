@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="payModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Emp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="salary" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="payEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emps" EntityType="Self.Emp" />
+    <EntitySet Name="Attendances" EntityType="payModel.Attendance" />
+    <EntitySet Name="salaries" EntityType="payModel.salary" />
+  </EntityContainer>
+  <EntityType Name="Attendance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eid" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eid" Type="Int32" />
+    <Property Name="bonus" Type="Int32" />
+    <Property Name="days" Type="Int32" />
+    <Property Name="deduction" Type="Int32" />
+    <Property Name="month" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>
